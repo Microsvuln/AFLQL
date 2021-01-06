@@ -63,15 +63,15 @@ To use AFLQL following steps are recommended :
 			Analysis-1 :
 				- python2 analysis-constants.py myCorpusDir out-const.txt  (If you get error after running analysis-constants.py then run "analysis-constants2.py"
 					instead
-					- This will make myCorpusDir and generate dictionary for constants in the project
+					- This will make myCorpusDir and generate corpus for constants in the project
 					
 				- python2 analysis-strings.py myCorpusDir out-str.txt
-					- This will generate dictionary for all strings in the project
+					- This will generate corpus for all strings in the project
 					
 6) Running the fuzzing campaign :
 
 			- Just make AFL++LTO config as optimal as possible the run your fuzzing campaign as :
-				afl-fuzz -i inputfolder -x myCorpusDir -o outputfolder -m none -- [LTO-Instrumented-program] @@
+				afl-fuzz -i inputfolder -x myCorpusDir -o outputfolder -m none -c [cmplog-version-program] -- [LTO-Instrumented-program]
 								
 
 ---- Making Open-Source projects with CodeQL ----
