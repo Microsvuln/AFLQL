@@ -17,7 +17,7 @@ To use AFLQL following steps are recommended :
 1) AFLQL is built on top of AFL++ 2.68 release version, so before every thing run : 
 	- chmod +x aflplusplus-lto-reqs.sh
 	- sudo su
-	- ./aflplusplus-lto-reqs.sh
+	- `./aflplusplus-lto-reqs.sh`
 
 	This will basically will fetch AFL++ for you .
 
