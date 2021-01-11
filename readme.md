@@ -15,15 +15,15 @@ Usage summary :
 
 To use AFLQL following steps are recommended :
 1) AFLQL is built on top of AFL++ 2.68 release version, so before every thing run : 
-	- chmod +x aflplusplus-lto-reqs.sh
-	- sudo su
-	- ./aflplusplus-lto-reqs.sh
+	- `chmod +x aflplusplus-lto-reqs.sh`
+	- `sudo su`
+	- `./aflplusplus-lto-reqs.sh`
 
 	This will basically will fetch AFL++ for you .
 
 	Now build AFL++ by running at AFL++ Directory (Before this, exit from superuser):
-	- make distrib
-	- sudo make install
+	- `make distrib`
+	- `sudo make install`
 
 2) Run fetch-build-ql.sh to fetch, install and config codeql for you, this bash script will:
 	- fetch codeql binaries for you
@@ -31,8 +31,8 @@ To use AFLQL following steps are recommended :
 	- setup to run codeql in the correct way
 	
 	To ensure that codeql is working fine you can run and check the output of :
-		- codeql resolve languages
-		- codeql resolve qlpacks
+		- `codeql resolve languages`
+		- `codeql resolve qlpacks`
 		
 
 3) To generate a project and understand AFLQL and CodeQL, this will generate a project for you automatically so you can run codeql scripts for analysis
@@ -71,7 +71,7 @@ To use AFLQL following steps are recommended :
 6) Running the fuzzing campaign :
 
 			- Just make AFL++LTO config as optimal as possible the run your fuzzing campaign as :
-				afl-fuzz -i inputfolder -x myCorpusDir -o outputfolder -m none -c [cmplog-version-program] -- [LTO-Instrumented-program]
+				`afl-fuzz -i inputfolder -x myCorpusDir -o outputfolder -m none -c [cmplog-version-program] -- [LTO-Instrumented-program]`
 								
 
 ---- Making Open-Source projects with CodeQL ----
