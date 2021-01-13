@@ -81,11 +81,11 @@ To use AFLQL following steps are recommended :
 				- This is the most important part of codeql for Open-Source and Big Projects
 				- Now you should have a database named "whodb" as a folder, now you can run analysis against it .
 				
-			- Important thing about running codeql scripts :
-				- Beginning with running codeql script, you may receive error, it's very possibly that you forgot to create "qlpack.yml" file, please look at
-					"generate-demo.sh" file to see how it will be create .
-				- You may have "qlpack.yml" in the correct way, but didn't upgrade your datebase, after creating "qlpack.yml" you should upgrade your database as:
-					- codeql database upgrade MYDATABASE
-						This will succesfully upgrade your database, now you should not have problems for running codeql scripts
+	- Important thing about running codeql scripts :
+		- Beginning with running codeql script, you may receive error, it's very possibly that you forgot to create "qlpack.yml" file, please look at
+			"generate-demo.sh" file to see how it will be create .
+		- You may have "qlpack.yml" in the correct way, but didn't upgrade your datebase, after creating "qlpack.yml" you should upgrade your database as:
+			- `codeql database upgrade MYDATABASE`
+				This will succesfully upgrade your database, now you should not have problems for running codeql scripts
 						
 @Microsvuln						
