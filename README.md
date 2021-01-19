@@ -39,39 +39,38 @@ To use AFLQL following steps are recommended :
 
 4) There is a folder in this directory called "QL-Scripts", go over and run:
 
-		- codeql query run CODQL-QUERY.ql -d DATABASENAME 
-			- for example : codeql query run literal.ql -d sample1Db
-			- Correct way for ALQL : codeql query run literal.ql -d sample1Db > ooo-const.txt
+	- codeql query run CODQL-QUERY.ql -d DATABASENAME 
+		- for example : codeql query run literal.ql -d sample1Db
+		- Correct way for ALQL : `codeql query run literal.ql -d sample1Db > ooo-const.txt`
 			
 5) Use python scripts for analysing the results of codeql scripts .
 
-			- Here we provide 2 python scripts which will generate corpus for you :
-				- analysis-constants.py -> for running to analyse the output of "literal.ql"
-					- literal.ql will basically extract all constants related to a project, this will help to find some codes, magic codes
-						in a more fast way, so saving the time for fuzzer or your concolic executor (If you possibly use it !)
+	- Here we provide 2 python scripts which will generate corpus for you :
+		- analysis-constants.py -> for running to analyse the output of "literal.ql"
+			- literal.ql will basically extract all constants related to a project, this will help to find some codes, magic codes in a more fast way, so saving the time for fuzzer or your concolic executor (If you possibly use it !)
 						
-				- analysis-strings.py -> This file is responsible to do analysis for output of "stirngs.ql" 	
-					- strings.ql -> This will extract all strings for a given project using extensive static analysis. for big Open-Source projects, this
+	- analysis-strings.py -> This file is responsible to do analysis for output of "stirngs.ql" 	
+		- strings.ql -> This will extract all strings for a given project using extensive static analysis. for big Open-Source projects, this
 						will help you alot!
 
-			Example-1 : 
-				at first we run : codeql query run literal.ql -d sample1Db > out-const.txt
-			Example-2 :
-				at first we run : codeql query run strings.ql -d sample1Db > out-str.txt
+	Example-1 : 
+		at first we run : `codeql query run literal.ql -d sample1Db > out-const.txt`
+	Example-2 :
+		Then we run : `codeql query run strings.ql -d sample1Db > out-str.txt`
 				
-				Then :
-			Analysis-1 :
-				- python2 analysis-constants.py myCorpusDir out-const.txt  (If you get error after running analysis-constants.py then run "analysis-constants2.py"
+	Then :
+		Analysis-1 :
+			- `python2 analysis-constants.py myCorpusDir out-const.txt`  (If you get error after running analysis-constants.py then run "analysis-constants2.py"
 					instead
-					- This will make myCorpusDir and generate corpus for constants in the project
-					
-				- python2 analysis-strings.py myCorpusDir out-str.txt
+					- This will make myCorpusDir and generate dictionaries for constants in the project
+		Analysis-2 :
+			- `python2 analysis-strings.py myCorpusDir out-str.txt`
 					- This will generate corpus for all strings in the project
 					
 6) Running the fuzzing campaign :
 
-			- Just make AFL++LTO config as optimal as possible the run your fuzzing campaign as :
-				`afl-fuzz -i inputfolder -x myCorpusDir -o outputfolder -m none -c [cmplog-version-program] -- [LTO-Instrumented-program]`
+	- Just make AFL++LTO config as optimal as possible the run your fuzzing campaign as :
+		`afl-fuzz -i inputfolder -x myCorpusDir -o outputfolder -m none -c [cmplog-version-program] -- [LTO-Instrumented-program]`
 								
 
 ---- Making Open-Source projects with CodeQL ----
@@ -82,11 +81,11 @@ To use AFLQL following steps are recommended :
 				- This is the most important part of codeql for Open-Source and Big Projects
 				- Now you should have a database named "whodb" as a folder, now you can run analysis against it .
 				
-			- Important thing about running codeql scripts :
-				- Beginning with running codeql script, you may receive error, it's very possibly that you forgot to create "qlpack.yml" file, please look at
-					"generate-demo.sh" file to see how it will be create .
-				- You may have "qlpack.yml" in the correct way, but didn't upgrade your datebase, after creating "qlpack.yml" you should upgrade your database as:
-					- codeql database upgrade MYDATABASE
-						This will succesfully upgrade your database, now you should not have problems for running codeql scripts
+	- Important thing about running codeql scripts :
+		- Beginning with running codeql script, you may receive error, it's very possibly that you forgot to create "qlpack.yml" file, please look at
+			"generate-demo.sh" file to see how it will be create .
+		- You may have "qlpack.yml" in the correct way, but didn't upgrade your datebase, after creating "qlpack.yml" you should upgrade your database as:
+			- `codeql database upgrade MYDATABASE`
+				This will succesfully upgrade your database, now you should not have problems for running codeql scripts
 						
 @Microsvuln						
