@@ -47,7 +47,7 @@ def do_analysis1(corpdir, infile):
                 str1 = str1[1:]
                 str1 = str1[:-1]
                 print("After cleanup : " + str1)
-                if (str1 != '0') and (str1 != 'ffffffff') and (str1 != 'fffffffe') or (len(str) == 4) or (len(str) == 8):
+                if (str1 != '0') and (str1 != 'ffffffff') and (str1 != 'fffffffe') or (len(str1) == 4) or (len(str1) == 8):
                     print ("first : "+str1)
                     if len(str1) > 8 :
                         str1 = str1[:-1]
