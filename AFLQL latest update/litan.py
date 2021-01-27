@@ -55,7 +55,7 @@ def do_analysis1(corpdir, infile):
                         str1 = str1 = "0"
                     try:
                             #str1 = str1.decode("hex")
-                            with open(corpdir+'/seed{0}'.format(n), 'w') as file:                    
+                            with open(corpdir+'/lit-seed{0}'.format(n), 'w') as file:                    
                                     str1 = str1.replace("0x","");
                                     print (str1)                                    
                                     str1 = int(str1,base=16)                                    
@@ -64,13 +64,13 @@ def do_analysis1(corpdir, infile):
                                     print ("I write : "+ str(str1))                            
                                     file.write(str(str1))                                    
                                     file.close()
-                                    with open (corpdir+'/seed{0}'.format(n), 'r') as q :
+                                    with open (corpdir+'/lit-seed{0}'.format(n), 'r') as q :
                                         a = q.readline()
                                         print("I read : " + str(a))
                                         a = a[1:]
                                         print ("Go to write this :" + str(a))
                                         q.close()
-                                        with open (corpdir+'/seed{0}'.format(n), 'w') as w1 :
+                                        with open (corpdir+'/lit-seed{0}'.format(n), 'w') as w1 :
                                                 w1.write(str(a))
                                                 print ("Done!")
                                                 w1.close()                                                                                
