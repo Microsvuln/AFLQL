@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+
+## add more analysis to it
+
+
 import os
 import string
 import binascii 
