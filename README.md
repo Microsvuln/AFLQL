@@ -76,8 +76,8 @@ To use AFLQL following steps are recommended :
 ---- Making Open-Source projects with CodeQL ----
 
 - Simple enough, do every step till the make stage, for example, consider LAVA-M :
-			- ./configure (As always!) (No instrumentation is needed)
-			- codeql database create whodb --language=cpp --command=make 
+			- `./configure` (As always!) (No instrumentation is needed)
+			- `codeql database create whodb --language=cpp --command=make`
 				- This is the most important part of codeql for Open-Source and Big Projects
 				- Now you should have a database named "whodb" as a folder, now you can run analysis against it .
 				
