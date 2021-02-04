@@ -88,4 +88,4 @@ To use AFLQL following steps are recommended :
 			- `codeql database upgrade MYDATABASE`
 				This will succesfully upgrade your database, now you should not have problems for running codeql scripts
 						
-#Technical documentation					
+# Technical documentation					
