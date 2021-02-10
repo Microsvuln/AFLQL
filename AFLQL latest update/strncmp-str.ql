@@ -1,4 +1,4 @@
-mport cpp 
+import cpp 
 
 /// function : strncmp
 
