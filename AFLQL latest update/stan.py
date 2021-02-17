@@ -39,6 +39,7 @@ def do_string_analysis(corpdir, infile1):
                 str11 = str11.rstrip('\r\n')
                 str11 = str11.replace(" ","")
                 str11 = str11.replace("|","")
+                # do some fix here ...
                 #print str1
                 with open(corpdir+'/seed-str{0}'.format(n), 'w') as file:                    
                         file.write(str11)
