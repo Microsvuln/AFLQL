@@ -3,7 +3,7 @@
 AFLQL aims at increasing code coverage and finding more bugs with extensive static analysis to guide the fuzzer through more detailed analysis
 	by a set of codeql scripts (Although there are just 2 scripts now, will complete step by step)
 
-AFLQL is basically using CodeQL language to run static analysis on source code level in Open-Source projects to generate dictionaries per codeql 
+AFLQL is basically using CodeQL to run static analysis on source code level in Open-Source projects to generate dictionaries per codeql 
 output files.
 
 This project is built mainly on top of AFL++LTO configuration and we highly recommend to use the optimal configs of AFL++ with LTO and CMPLOG instrumentation
